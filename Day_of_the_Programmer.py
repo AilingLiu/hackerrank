@@ -21,7 +21,7 @@ def dayOfProgrammer(year):
     else:
 
         if year == 1918:
-            return '26.09.{}'.format(year) 
+            return '26.09.{}'.format(year) #https://www.timeanddate.com/calendar/?year=1918&country=20
 
         else:
             return '13.09.{}'.format(year)
