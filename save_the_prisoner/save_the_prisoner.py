@@ -8,7 +8,22 @@ import sys
 
 # Complete the saveThePrisoner function below.
 def saveThePrisoner(n, m, s):
-    return (m%n)+(s-1)
+    """
+    n : the number of prisoners
+    m : the number of sweets
+    s : the chair number to start passing out treats at
+    """
+    # candy number is smaller than prisoners
+    if m <= n:
+        poison = s+m-1
+
+    else:
+        prev_p = s-1
+        if prev_p == 0:
+            prev_p = n
+        poison = prev_p + (m%n)
+
+    return poison
 
 
 if __name__ == '__main__':
