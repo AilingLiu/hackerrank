@@ -21,7 +21,7 @@ def howManyGames(p, d, m, s):
             cnt += 1
 
     remains = (s - total)
-    cnt += (s - total)//m
+    cnt += remains//m
     return cnt
 
 
