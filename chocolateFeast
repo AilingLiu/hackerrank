@@ -1,0 +1,44 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the chocolateFeast function below.
+def chocolateFeast(n, c, m):
+
+    # how many chocolate can be bought with c cost --- step 1
+    # with the wrapper (chocolate), how many can more choco be bought with m --- step 2
+    # with the new choco wrapper, repeat step 2 --- step 3
+    # until wrapper < m, then sum up all the chocos --- step 4
+
+    initial_choco = n//c
+    wrapper = initial_choco
+
+    while wrapper >= m:
+        new_choco = wrapper//m
+        wrapper = (wrapper%m) + new_choco
+        initial_choco += new_choco
+    return initial_choco
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input())
+
+    for t_itr in range(t):
+        ncm = input().split()
+
+        n = int(ncm[0])
+
+        c = int(ncm[1])
+
+        m = int(ncm[2])
+
+        result = chocolateFeast(n, c, m)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
