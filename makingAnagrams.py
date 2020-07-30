@@ -7,6 +7,7 @@ import re
 import sys
 
 # Complete the makingAnagrams function below.
+#https://www.hackerrank.com/challenges/making-anagrams/copy-from/171667188
 def makingAnagrams(s1, s2):
     
     #num of letter in each string
